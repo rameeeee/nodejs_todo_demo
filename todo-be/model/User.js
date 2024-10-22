@@ -21,6 +21,9 @@ const userSchema = Schema({
 userSchema.methods.toJSON = function(){ // object가 JSON으로 바뀔 때 호출할 수 있는 함수
     const obj = this._doc;
     delete obj.password;
+    delete obj.updatedAt;
+    delete obj.__v;
+    
     return obj;
 }
 
